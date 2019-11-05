@@ -1,0 +1,54 @@
+"0","#knitr::opts_chunk$set(echo = TRUE)"
+"0","library(readr)"
+"0","library(tidyverse)"
+"2","package ‘tidyverse’ was built under R version 3.4.2"
+"2","── Attaching packages ──────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+"
+"2","✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+✔ tibble  1.3.4     ✔ dplyr   0.7.4
+✔ tidyr   0.7.2     ✔ stringr 1.2.0
+✔ ggplot2 2.2.1     ✔ forcats 0.3.0
+"
+"2","package ‘tidyr’ was built under R version 3.4.2"
+"2","package ‘purrr’ was built under R version 3.4.2"
+"2","package ‘dplyr’ was built under R version 3.4.2"
+"2","package ‘forcats’ was built under R version 3.4.3"
+"2","── Conflicts ─────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+"
+"0","library(stargazer)"
+"2","
+Please cite as: 
+
+"
+"2"," Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.
+"
+"2"," R package version 5.2. http://CRAN.R-project.org/package=stargazer 
+
+"
+"0","library(highcharter)"
+"2","Highcharts (www.highcharts.com) is a Highsoft software product which is
+"
+"2","not free for commercial and Governmental use
+"
+"0","library(DT)"
+"0","RAW_PATH<-""~/Documents/2018/02_Jaafari_Proj/DATA/RAW/"""
+"0","data<-read_csv(paste0(RAW_PATH,""VCAP_STATE_TOTALS_MASTER.csv""))"
+"2","Parsed with column specification:
+cols(
+  State = col_character(),
+  Year = col_integer(),
+  County = col_character(),
+  Processed = col_number(),
+  Approved = col_character(),
+  Denied = col_number(),
+  Non_Processed = col_character(),
+  Denied_HIC = col_character(),
+  Num_Paid = col_number(),
+  Total_Paid = col_character(),
+  Avg_Paid = col_character(),
+  Funeral_Payout = col_number(),
+  Murder_Claims = col_character()
+)
+"

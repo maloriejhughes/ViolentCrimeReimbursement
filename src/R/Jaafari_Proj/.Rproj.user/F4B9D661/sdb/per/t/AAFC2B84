@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "plot(counties_with_race$percent_nonwhite,counties_with_race$percent_denied)\nlibrary(tidyverse)\ncounties_with_race2<- counties_with_race %>%filter(avg_processed_per_year>20)\nmod<-lm(percent_denied~percent_nonwhite +factor(State) +  log(avg_processed_per_year),data=counties_with_race)\nsummary(mod)\n#counties_with_race$num_nonwhite<-counties_with_race$\nmod2<-lm(log(total_denied)~percent_nonwhite +factor(State) +  log(total_processed_all_years),data=counties_with_race)\nsummary(mod2)\n\nplot(counties_with_race2$percent_nonwhite,counties_with_race2$percent_denied)\n100*0.003899*10\n",
+    "created" : 1520446050037.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3171565639",
+    "id" : "AAFC2B84",
+    "lastKnownWriteTime" : 1520606780,
+    "last_content_update" : 1520606780922,
+    "path" : "/Users/MHughes/Documents/2018/02_Jaafari_Proj/src/R/Jaafari_Proj/simple_model.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled3"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

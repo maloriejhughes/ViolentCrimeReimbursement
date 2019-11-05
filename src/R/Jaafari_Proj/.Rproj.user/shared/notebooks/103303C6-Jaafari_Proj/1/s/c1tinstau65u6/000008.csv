@@ -1,0 +1,5 @@
+"0","r2 <- plm(log(total_denied)~percent_nonwhite +factor(State) +  log(total_processed_all_years), model=""within"", data=counties_with_race, index = c(""County"",""Year""))
+"
+"2","Error in pdata.frame(data, index) : 
+  variable Year does not exist (time index)
+"
