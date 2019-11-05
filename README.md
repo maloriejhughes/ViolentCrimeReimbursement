@@ -26,7 +26,7 @@ This value is the number of claims paid per county averaged over the three years
 #### Total Number Paid:
 This value is the number of claims paid per county summed over the three years, 2013-2015.
 
-#### Percent Unpaid:
+#### Percent Unpaid: 
 This value is the number of claims processed minus the number of claims paid, divided by the number of claims processed over the three year period.
 
 #### Percent nonwhite:
