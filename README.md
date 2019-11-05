@@ -61,7 +61,7 @@ F-statistic: 748.4 on 4 and 114 DF,  p-value: < 2.2e-16
 
 
 
-#### Interpretation
+#### Interpretation 
 The coefficient on percent_nonwhite is interpreted as: for a unit increase in the percent of nonwhite residents, the percent of denials increases by 100*(e^(0.003899)-1)=.39%.  So, holding state and total claims processed constant, for every 10% increase in the percent of nonwhite residents, percent of denials increases by about 4%. 
 
 
