@@ -4,6 +4,7 @@ Data supporting investigative journalist Joeseph Jaafari's piece on bias in viol
 
 Publication here: https://nationswell.com/every-murder-is-real-victims-compensation-philadelphia/amp/
 
+Analysis here: https://maloriejhughes.github.io/ViolentCrimeReimbursement/
 
 ## Definitions
 #### Average Processed per year:
