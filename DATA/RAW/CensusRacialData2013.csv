@@ -1,0 +1,422 @@
+State,County,Black,Latino,Native American,White
+Louisiana,Acadia  ,18.3,2,0.3,78.1
+Louisiana,Allen  ,23.2,1.7,2.6,70.6
+Louisiana,Ascension  ,22.8,5,0.4,70
+Louisiana,Assumption  ,29.8,2.3,0.6,66.5
+Louisiana,Avoyelles  ,29.5,1.7,1.3,66
+Louisiana,Beauregard  ,13.3,3.5,1.2,79.5
+Louisiana,Bienville  ,42.2,1.7,0.3,54.6
+Louisiana,Bossier  ,21.4,6.3,0.7,68.4
+Louisiana,Caddo  ,48,2.7,0.5,46.7
+Louisiana,Calcasieu  ,25.2,2.9,0.6,68.9
+Louisiana,Caldwell  ,17.1,2.7,0.3,78.9
+Louisiana,Cameron  ,2.1,3.2,0.6,93.1
+Louisiana,Catahoula  ,31.8,1.2,0.4,65.8
+Louisiana,Claiborne  ,50.7,1.4,0.5,46.3
+Louisiana,Concordia  ,40.4,1.2,0.4,57.1
+Louisiana,De Soto  ,38.1,2.6,1.1,57.4
+Louisiana,East Baton Rouge  ,46,3.9,0.3,45.9
+Louisiana,East Carroll  ,68,2,0.3,28.9
+Louisiana,East Feliciana  ,44.4,1.3,0.4,52.6
+Louisiana,Evangeline  ,28.5,2.3,0.3,67.8
+Louisiana,Franklin  ,31.6,1.3,0.2,66
+Louisiana,Grant  ,15.7,4.5,1.1,77.1
+Louisiana,Iberia  ,32.3,3.6,0.5,60
+Louisiana,Iberville  ,48.7,2.4,0.2,48
+Louisiana,Jackson  ,29.3,1.5,0.3,67.5
+Louisiana,Jefferson Davis  ,17.1,2,0.7,78.4
+Louisiana,Jefferson  ,27,13.4,0.6,54.7
+Louisiana,La Salle  ,12.3,2.5,1.2,83.2
+Louisiana,Lafayette  ,26.1,4.3,0.4,66.7
+Louisiana,Lafourche  ,13.5,4.2,2.9,77.2
+Louisiana,Lincoln  ,41.4,2.7,0.4,53
+Louisiana,Livingston  ,6,3.3,0.5,88.8
+Louisiana,Madison  ,62.2,1.7,0.2,35.1
+Louisiana,Morehouse  ,47.8,1.3,0.2,49.8
+Louisiana,Natchitoches  ,41.4,2.1,1,53.4
+Louisiana,Orleans  ,60.1,5.5,0.4,31
+Louisiana,Ouachita  ,37.1,2.1,0.3,58.7
+Louisiana,Plaquemines  ,20.2,6.2,1.8,66.8
+Louisiana,Pointe Coupee  ,35.6,2.4,0.3,60.8
+Louisiana,Rapides  ,32,2.8,0.9,61.8
+Louisiana,Red River  ,39.4,1.3,0.4,58.1
+Louisiana,Richland  ,35.9,2.1,0.4,60.9
+Louisiana,Sabine  ,16.8,3.6,8.7,68.5
+Louisiana,St. Bernard  ,21.5,9.7,0.8,64.7
+Louisiana,St. Charles  ,26.4,5.7,0.4,65.8
+Louisiana,St. Helena  ,53,1.4,0.4,44.4
+Louisiana,St. James  ,49.4,1.7,0.2,48
+Louisiana,St. John the Baptist  ,54.9,5.2,0.4,38.5
+Louisiana,St. Landry  ,41.3,1.8,0.4,55.4
+Louisiana,St. Martin  ,30.7,2.4,0.5,64.8
+Louisiana,St. Mary  ,32.7,6.2,1.9,56.7
+Louisiana,St. Tammany  ,12,5.2,0.6,79.7
+Louisiana,Tangipahoa  ,30.3,3.8,0.4,64
+Louisiana,Tensas  ,54.8,1.8,0.1,42.3
+Louisiana,Terrebonne  ,18.9,4.5,5.7,68.1
+Louisiana,Union  ,26.4,4.3,0.4,68.6
+Louisiana,Vermilion  ,14.8,3,0.4,78.6
+Louisiana,Vernon  ,14.7,9.2,1.6,70.4
+Louisiana,Washington  ,30.3,2.1,0.4,66.1
+Louisiana,Webster  ,33.8,1.8,0.5,62.6
+Louisiana,West Baton Rouge  ,37.9,2.7,0.2,57.9
+Louisiana,West Carroll  ,15.9,2.7,0.6,79.9
+Louisiana,West Feliciana  ,45.9,1.4,0.1,51.8
+Louisiana,Winn  ,30.5,1.7,0.7,65.7
+Texas,Anderson,21.5,16.9,0.7,60.2
+Texas,Andrews,2.1,53.4,1.5,42.9
+Texas,Angelina,15.6,20.8,0.8,62
+Texas,Aransas,1.8,26.1,1.2,68.7
+Texas,Archer,0.8,8.5,1.2,88.6
+Texas,Armstrong,1.4,9.5,1.3,87.1
+Texas,Atascosa,1.2,62.6,1.2,35.3
+Texas,Austin,9.6,25.5,0.8,63.8
+Texas,Bailey,1.6,61.1,2.7,36.6
+Texas,Bandera,0.7,17.4,1.2,79.7
+Texas,Bastrop,8,34.2,1.7,55.8
+Texas,Baylor,3,12.4,0.6,83.2
+Texas,Bee,8.5,57.4,0.8,33.1
+Texas,Bell,22.4,23.2,1.1,48.9
+Texas,Bexar,8.2,59.1,1.2,29.5
+Texas,Blanco,1.3,19.7,1.7,77.1
+Texas,Borden,0.6,15.5,1.1,82.1
+Texas,Bosque,2,16.7,0.9,79.5
+Texas,Bowie,24.5,7.2,1,65.4
+Texas,Brazoria,13.3,28.9,0.8,50.7
+Texas,Brazos,11.3,24.5,0.7,57.7
+Texas,Brewster,1.5,43.5,1.7,52.8
+Texas,Briscoe,2.6,27,0.5,69.1
+Texas,Brooks,1,89.9,0.6,8.4
+Texas,Brown,3.6,20.8,0.8,73.5
+Texas,Burleson,12.7,19.6,1,66.3
+Texas,Burnet,2.2,21.4,1.1,74.6
+Texas,Caldwell,7.1,48.9,1.5,42.6
+Texas,Calhoun,3,47.6,0.8,44.1
+Texas,Callahan,1.5,8.8,0.8,87.4
+Texas,Cameron,0.8,88.5,0.6,10.1
+Texas,Camp,16.9,23,1.2,57.6
+Texas,Carson,0.8,9.5,1.3,87
+Texas,Cass,17.4,4.3,0.6,76.4
+Texas,Castro,2.6,62.3,1.7,34.6
+Texas,Chambers,8.3,20.6,1.1,69
+Texas,Cherokee,14.9,21.7,1.6,61.8
+Texas,Childress,10.2,29.3,0.7,58.7
+Texas,Clay,1,5.2,1.5,91
+Texas,Cochran,4.8,56.3,2.5,38.2
+Texas,Coke,1.1,21.5,2.1,75.6
+Texas,Coleman,2.8,17.3,1.3,77.9
+Texas,Collin,9.4,15,0.7,61.2
+Texas,Collingsworth,6,32,2.4,60.5
+Texas,Colorado,13.3,27.9,1,58.3
+Texas,Comal,2.1,26.2,0.8,69.5
+Texas,Comanche,0.9,26.8,1.2,71.4
+Texas,Concho,2.5,54.5,0.6,42.6
+Texas,Cooke,3.2,16.7,1.3,77.2
+Texas,Coryell,17.2,17.2,1.2,60.2
+Texas,Cottle,10.1,23.8,0.7,65.6
+Texas,Crane,3.6,60.1,1.3,35.3
+Texas,Crockett,1.7,64.2,1.8,33.9
+Texas,Crosby,4.4,53.8,1.2,41.2
+Texas,Culberson,1.1,73.4,2.6,22.5
+Texas,Dallam,1.9,42.5,1.9,53.2
+Texas,Dallas,23.1,39,1.1,31.7
+Texas,Dawson,7.1,54.9,1.2,37.4
+Texas,Deaf Smith,1.9,69.9,1.7,27.7
+Texas,Delta,7.5,6.9,1.8,81.3
+Texas,Denton,9.4,18.9,0.9,62.5
+Texas,DeWitt,9.6,33.8,0.9,56.1
+Texas,Dickens,5.7,29.6,2.3,63.2
+Texas,Dimmit,1.7,85.4,0.8,12.6
+Texas,Donley,4.7,10.5,0.7,82.6
+Texas,Duval,1.4,88.5,0.7,10
+Texas,Eastland,2.3,15.8,1.2,80
+Texas,Ector,4.8,56.4,1.4,37.3
+Texas,Edwards,0.8,54.6,2.1,43.7
+Texas,El Paso,4,81.1,1,13.5
+Texas,Ellis,9.4,24.6,0.8,64.2
+Texas,Erath,1.6,20.2,1.4,76
+Texas,Falls,25.2,22.2,0.9,51.7
+Texas,Fannin,7,10.1,1.2,79.7
+Texas,Fayette,6.8,19.6,1.2,72.7
+Texas,Fisher,3.8,27.5,1,67.6
+Texas,Floyd,3.9,55.7,1.3,40.3
+Texas,Foard,4.9,17.4,0.4,76
+Texas,Fort Bend,21.2,24,0.6,35.6
+Texas,Franklin,4.5,13.4,1.1,79.8
+Texas,Freestone,16.8,14.6,1.4,67.2
+Texas,Frio,3.9,78,0.8,16.1
+Texas,Gaines,2.1,38.7,1,58.3
+Texas,Galveston,13.7,23.5,0.8,58.3
+Texas,Garza,7.3,48.3,0.7,44.2
+Texas,Gillespie,0.6,21.3,1.2,76.9
+Texas,Glasscock,1.8,32.5,0.7,64.9
+Texas,Goliad,5.5,35.4,0.9,58.4
+Texas,Gonzales,7.7,49.1,1.6,43.2
+Texas,Gray,5.3,26.3,1.3,66.1
+Texas,Grayson,6.1,12.2,1.8,77.3
+Texas,Gregg,20.3,17.5,0.9,59.6
+Texas,Grimes,16.5,22.6,0.8,59.5
+Texas,Guadalupe,7.7,36.6,1,52.8
+Texas,Hale,5.9,58,1.6,35.5
+Texas,Hall,7.8,34.6,1.2,56.9
+Texas,Hamilton,0.9,11.2,1.7,86.3
+Texas,Hansford,0.9,45.5,1.8,52.7
+Texas,Hardeman,6.3,21.5,1,70.2
+Texas,Hardin,5.8,5.2,0.5,87.1
+Texas,Harris,19.5,41.6,1.1,31.9
+Texas,Harrison,22.4,12.1,1.3,63.7
+Texas,Hartley,7.5,24.9,0.7,66.1
+Texas,Haskell,4.5,25,0.9,68.8
+Texas,Hays,4,36.7,1.2,56.8
+Texas,Hemphill,0.7,31.6,1.2,65.8
+Texas,Henderson,6.6,11.8,0.8,79.4
+Texas,Hidalgo,0.8,91,0.5,7.3
+Texas,Hill,7,19.4,0.8,72
+Texas,Hockley,4.1,46.2,1.4,48.7
+Texas,Hood,0.8,11.2,1,85.8
+Texas,Hopkins,7.4,16.1,1,74.4
+Texas,Houston,26.1,10.9,0.6,61.7
+Texas,Howard,7,39.4,1.5,52
+Texas,Hudspeth,1.6,77.9,1.4,19.7
+Texas,Hunt,8.4,14.6,1.2,73.9
+Texas,Hutchinson,2.8,22,2,71.9
+Texas,Irion,1.9,26.9,0.5,69.4
+Texas,Jack,4.2,15.8,1,78.5
+Texas,Jackson,7.5,31,0.8,60.4
+Texas,Jasper,16.5,6.4,0.7,75
+Texas,Jeff Davis,1.6,34.5,0.8,62.2
+Texas,Jefferson,34.4,18.5,1,42.9
+Texas,Jim Hogg,0.6,92.1,0.5,6.3
+Texas,Jim Wells,0.9,79.3,1,19.2
+Texas,Johnson,3.1,19.4,1,74.8
+Texas,Jones,13,26.3,1.2,60.2
+Texas,Karnes,9.3,51.2,1.2,39.1
+Texas,Kaufman,10.7,18.8,1,68
+Texas,Kendall,1,21.7,0.7,75.2
+Texas,Kenedy,4.1,75.2,1.5,20.4
+Texas,Kent,1.2,17,1.2,79.9
+Texas,Kerr,2.1,25.2,1.1,70.7
+Texas,Kimble,0.5,25.6,1.2,72.1
+Texas,King,0,16.5,1.4,79.3
+Texas,Kinney,2,57,1,40
+Texas,Kleberg,4.4,71.4,0.9,21.9
+Texas,Knox,6,32.8,1.1,60.1
+Texas,La Salle,1,84.8,0.8,13.8
+Texas,Lamar,13.5,7.1,1.6,75.3
+Texas,Lamb,5.1,53.8,1.9,40.6
+Texas,Lampasas,4,18.7,1.1,73.6
+Texas,Lavaca,7.2,17.4,0.6,74.5
+Texas,Lee,11.2,23.2,1.1,64.1
+Texas,Leon,7.5,14,0.7,76.7
+Texas,Liberty,10.9,19.7,1,67.5
+Texas,Limestone,18,20.4,1.1,60.5
+Texas,Lipscomb,1.8,31.6,1.9,65
+Texas,Live Oak,4.8,36.9,1.2,57
+Texas,Llano,1.2,9.3,0.9,87.7
+Texas,Loving,0,17.9,3.2,78.9
+Texas,Lubbock,7.8,33.4,1.1,55.8
+Texas,Lynn,2.5,47,1.8,49.4
+Texas,Madison,20.3,21.8,1.1,56.5
+Texas,Marion,22,3.8,1.1,71
+Texas,Martin,2.1,44.7,1.1,52
+Texas,Mason,1,23.1,0.5,75.1
+Texas,Matagorda,11.4,40,1.2,46.2
+Texas,Maverick,0.6,95.1,1.5,3.2
+Texas,McCulloch,2.6,31.3,1,65.2
+Texas,McLennan,15,24.8,1.1,57.8
+Texas,McMullen,1,36.6,0.5,60.5
+Texas,Medina,2.9,50.6,0.9,45.3
+Texas,Menard,1.4,35.4,1.4,62.6
+Texas,Midland,6.8,41.1,1.1,50
+Texas,Milam,10.1,24.8,1.3,64.1
+Texas,Mills,0.9,17.5,1,80.3
+Texas,Mitchell,12.8,38.7,1.5,48.2
+Texas,Montague,0.6,10.4,1.3,86.6
+Texas,Montgomery,4.7,21.9,1,69.4
+Texas,Moore,2.7,52.9,1.5,35.9
+Texas,Morris,22.8,8.8,1.1,65.8
+Texas,Motley,2.1,15.7,1.5,80.7
+Texas,Nacogdoches,18.4,18.5,0.9,60.4
+Texas,Navarro,14,25.2,1.1,58.4
+Texas,Newton,20.8,3.4,0.8,73.2
+Texas,Nolan,5.3,35.3,1,58.4
+Texas,Nueces,4.4,62,0.8,31.4
+Texas,Ochiltree,0.9,51.2,1.5,46.4
+Texas,Oldham,3.7,14.9,0.9,78.8
+Texas,Orange,8.6,6.7,0.7,82
+Texas,Palo Pinto,2.4,19.6,0.9,76
+Texas,Panola,16,8.8,0.7,73.3
+Texas,Parker,2,11.2,0.9,84.2
+Texas,Parmer,1.6,61.4,1.7,36.6
+Texas,Pecos,4.3,67.5,1.1,27
+Texas,Polk,11.4,14,2.2,71.5
+Texas,Potter,10.8,36.7,1.3,47.1
+Texas,Presidio,1.4,82,1.4,14.9
+Texas,Rains,2.9,8.2,1,86.3
+Texas,Randall,3,18.7,0.9,75.3
+Texas,Reagan,3.4,65.3,1,31.3
+Texas,Real,1,26.9,1.7,69.6
+Texas,Red River,17.4,7,1.5,73.4
+Texas,Reeves,5.4,74.5,0.8,19.2
+Texas,Refugio,6.8,48.7,1,43.5
+Texas,Roberts,0.7,13.4,0.5,82.9
+Texas,Robertson,21.3,19.2,0.9,58.3
+Texas,Rockwall,6.1,16.7,0.7,72.8
+Texas,Runnels,2.6,33.6,1.5,62.8
+Texas,Rusk,17.6,15.7,1,64.9
+Texas,Sabine,7.5,3.8,0.8,86.7
+Texas,San Augustine,22.6,7,0.6,68.8
+Texas,San Jacinto,10.5,12,0.9,75.4
+Texas,San Patricio,2.1,55.4,0.9,40.8
+Texas,San Saba,3.6,29,1.3,66.1
+Texas,Schleicher,1.8,50.9,0.6,46.6
+Texas,Scurry,5.2,38.5,1.2,55.2
+Texas,Shackelford,1.3,10.8,0.7,86.3
+Texas,Shelby,17.6,17.6,0.9,63.5
+Texas,Sherman,0.9,42.3,1.5,55.5
+Texas,Smith,17.9,18.3,0.8,61.3
+Texas,Somervell,1.2,19.1,1.3,77.1
+Texas,Starr,0.4,95.7,0.3,3.9
+Texas,Stephens,2.5,22.4,1.1,73.7
+Texas,Sterling,1.4,37,1.9,59.3
+Texas,Stonewall,4.1,15.6,1.4,78.5
+Texas,Sutton,0.9,61.1,0.8,37.8
+Texas,Swisher,7.7,42.1,1.5,49.3
+Texas,Tarrant,15.9,27.6,0.9,50.1
+Texas,Taylor,7.8,23.1,1,65.8
+Texas,Terrell,1.2,47.8,3,45.8
+Texas,Terry,5,53,1.1,41.6
+Texas,Throckmorton,0.9,11.2,0.8,86.2
+Texas,Titus,10.3,40.9,2.4,47.5
+Texas,Tom Green,4.7,37.3,1.1,55.9
+Texas,Travis,8.9,33.8,1.4,50
+Texas,Trinity,9.6,9.2,0.7,78.9
+Texas,Tyler,11.6,7.4,0.8,79.4
+Texas,Upshur,8.7,7.4,1,81.1
+Texas,Upton,2.6,51.6,3.1,44.5
+Texas,Uvalde,1.2,69.9,1,28.2
+Texas,Val Verde,1.8,80.2,0.8,17.2
+Texas,Van Zandt,3,10,1,84.7
+Texas,Victoria,6.8,44.9,0.8,46.7
+Texas,Walker,22.8,17.5,0.8,57.7
+Texas,Waller,25.8,29.5,1.5,43.6
+Texas,Ward,4.9,50.4,1.5,43.4
+Texas,Washington,18,14.9,0.5,65.1
+Texas,Webb,0.7,95.3,0.6,3.7
+Texas,Wharton,14.4,39,0.7,46.2
+Texas,Wheeler,2.9,26.6,1.4,68.5
+Texas,Wichita,10.7,17.9,1.3,67.2
+Texas,Wilbarger,8.7,27.7,1.5,61
+Texas,Willacy,2.6,87.4,0.6,9.6
+Texas,Williamson,6.7,23.8,0.9,62.3
+Texas,Wilson,1.8,38.8,0.9,58
+Texas,Winkler,2.9,57.3,1.9,39.2
+Texas,Wise,1.5,18.2,1,78.3
+Texas,Wood,4.9,9.3,1,83.7
+Texas,Yoakum,1.5,62.4,1.7,35.2
+Texas,Young,1.7,17.4,1.2,79.3
+Texas,Zapata,0.5,93.5,0.4,5.8
+Texas,Zavala,1.2,92.9,0.9,6.4
+Arizona,Apache,0.7,6.3,73.5,19.2
+Arizona,Cochise,4.7,33.9,1.7,56.8
+Arizona,Coconino,1.6,13.9,27.4,55
+Arizona,Gila,0.8,18.5,16.2,63.8
+Arizona,Graham,2,31.5,14,52.2
+Arizona,Greenlee,1.5,47.2,3.4,47.6
+Arizona,La Paz,1,24.9,17.5,60.3
+Arizona,Maricopa,5.7,30,2.7,57.6
+Arizona,Mohave,1.3,15.5,2.9,78.4
+Arizona,Navajo,1.2,11,44.8,42.6
+Arizona,Pima,4,35.7,4.2,53.9
+Arizona,Pinal,4.8,29,6.8,58.2
+Arizona,Santa Cruz,0.8,82.5,1.3,15.9
+Arizona,Yavapai,0.8,14,2.1,81.3
+Arizona,Yuma,2.7,61.1,2.2,33.5
+New Jersey,Atlantic,17.3,18.2,0.7,57.2
+New Jersey,Bergen,6.7,17.9,0.4,59.7
+New Jersey,Burlington,17.5,7.3,0.3,69.4
+New Jersey,Camden,21,15.4,0.6,58.8
+New Jersey,Cape May,5,7,0.4,86
+New Jersey,Cumberland,21.8,28.6,1.6,48.6
+New Jersey,Essex,41.9,21.7,0.7,32.7
+New Jersey,Gloucester,10.6,5.4,0.2,80
+New Jersey,Hudson,15.1,42.9,1.2,29.8
+New Jersey,Hunterdon,2.7,5.9,0.2,86.9
+New Jersey,Mercer,21.1,16.2,0.6,52.6
+New Jersey,Middlesex,11,19.5,0.6,46.4
+New Jersey,Monmouth,7.6,10.3,0.3,76.1
+New Jersey,Morris,3.5,12.4,0.3,73.3
+New Jersey,Ocean,3.5,8.8,0.3,85.2
+New Jersey,Passaic,14.7,38.9,1.5,43.7
+New Jersey,Salem,14.7,7.7,0.5,75.8
+New Jersey,Somerset,9.8,13.9,0.3,59.8
+New Jersey,Sussex,2.1,7,0.2,87.9
+New Jersey,Union,23.4,29.3,0.7,43.2
+New Jersey,Warren,4.3,7.9,0,84.1
+Pennsylvania,Adams,1.9,1.9,0.4,90
+Pennsylvania,Allegheny,13.3,13.3,0.2,79.9
+Pennsylvania,Armstrong,0.9,0.9,0.1,97.4
+Pennsylvania,Beaver,6.3,6.3,0.1,90.1
+Pennsylvania,Bedford,0.6,0.6,0.2,97.1
+Pennsylvania,Berks,6.5,6.5,0.7,75
+Pennsylvania,Blair,1.8,1.8,0.1,95.2
+Pennsylvania,Bradford,0.6,0.6,0.3,96.2
+Pennsylvania,Bucks,4,4,0.3,85.8
+Pennsylvania,Butler,1.2,1.2,0.1,95.4
+Pennsylvania,Cambria,3.9,3.9,0.1,92.8
+Pennsylvania,Cameron,0.4,0.4,0.4,97.3
+Pennsylvania,Carbon,1.9,1.9,0.3,92.9
+Pennsylvania,Centre,3.4,3.4,0.1,87.3
+Pennsylvania,Chester,6.4,6.4,0.3,81.1
+Pennsylvania,Clarion,1,1,0.2,96.7
+Pennsylvania,Clearfield,2.8,2.8,0.2,93.5
+Pennsylvania,Clinton,1.8,1.8,0.1,95.3
+Pennsylvania,Columbia,2,2,0.2,93.7
+Pennsylvania,Crawford,1.9,1.9,0.2,95.3
+Pennsylvania,Cumberland,3.7,3.7,0.2,88
+Pennsylvania,Dauphin,18.6,18.6,0.3,68.9
+Pennsylvania,Delaware,20.9,20.9,0.2,69.4
+Pennsylvania,Elk,0.4,0.4,0.1,97.7
+Pennsylvania,Erie,7.5,7.5,0.3,85.9
+Pennsylvania,Fayette,4.7,4.7,0.2,92.5
+Pennsylvania,Forest,18.9,18.9,0.3,74.8
+Pennsylvania,Franklin,3.7,3.7,0.3,89.3
+Pennsylvania,Fulton,1.2,1.2,0.2,96.4
+Pennsylvania,Greene,3.4,3.4,0.2,93.9
+Pennsylvania,Huntingdon,5.5,5.5,0.1,91.3
+Pennsylvania,Indiana,2.7,2.7,0.2,94
+Pennsylvania,Jefferson,0.5,0.5,0.2,97.6
+Pennsylvania,Juniata,0.7,0.7,0.3,95.3
+Pennsylvania,Lackawanna,3.1,3.1,0.3,88.2
+Pennsylvania,Lancaster,4.7,4.7,0.4,83.6
+Pennsylvania,Lawrence,4.1,4.1,0.1,92.7
+Pennsylvania,Lebanon,3.1,3.1,0.3,85
+Pennsylvania,Lehigh,8.2,8.2,0.8,69.1
+Pennsylvania,Luzerne,4.6,4.6,0.4,85.9
+Pennsylvania,Lycoming,4.7,4.7,0.2,91.3
+Pennsylvania,McKean,2.7,2.7,0.3,93.7
+Pennsylvania,Mercer,5.8,5.8,0.2,90.8
+Pennsylvania,Mifflin,0.7,0.7,0.1,96.6
+Pennsylvania,Monroe,14.8,14.8,0.5,68.9
+Pennsylvania,Montgomery,9.3,9.3,0.2,77.7
+Pennsylvania,Montour,1.7,1.7,0.1,92.8
+Pennsylvania,Northampton,6.1,6.1,0.3,79.1
+Pennsylvania,Northumberland,2.5,2.5,0.2,93.4
+Pennsylvania,Perry,0.8,0.8,0.2,96.1
+Pennsylvania,Philadelphia,44.2,44.2,0.8,36.3
+Pennsylvania,Pike,6.2,6.2,0.4,82
+Pennsylvania,Potter,0.5,0.5,0.3,97.1
+Pennsylvania,Schuylkill,3.1,3.1,0.2,92.2
+Pennsylvania,Snyder,1.2,1.2,0.2,95.6
+Pennsylvania,Somerset,2.7,2.7,0.1,95.1
+Pennsylvania,Sullivan,2.9,2.9,0.4,94
+Pennsylvania,Susquehanna,0.5,0.5,0.2,96.6
+Pennsylvania,Tioga,0.9,0.9,0.3,96.2
+Pennsylvania,Union,8,8,0.5,84.6
+Pennsylvania,Venango,1.2,1.2,0.2,96
+Pennsylvania,Warren,0.5,0.5,0.2,97.2
+Pennsylvania,Washington,3.2,3.2,0.1,93
+Pennsylvania,Wayne,3.4,3.4,0.3,91.2
+Pennsylvania,Westmoreland,2.5,2.5,0.1,94.4
+Pennsylvania,Wyoming,0.9,0.9,0.2,95.8
+Pennsylvania,York,6.3,6.3,0.3,85.2
