@@ -1,0 +1,570 @@
+---
+title: "Jaafari Collaboration"
+author: "Malorie Hughes"
+output: 
+  flexdashboard::flex_dashboard:
+    source_code: embed
+   
+    vertical_layout: fill
+    theme: bootstrap
+---
+
+
+
+```{css}
+
+
+.navbar-inverse {
+ 
+  filter: grayscale(30%);
+  filter: opacity(80%);
+ 
+  background-repeat: no-repeat;
+  padding: 3px
+  
+}
+
+
+.navbar-brand {
+color:black!important;
+font-size:15pt;
+font-weight: 310; 
+
+font-family: 'Helvetica Neue', sans-serif;
+ margin: 8px 250px 8px 46px;
+ 
+ 
+}
+.navbar-title {
+  color: #ffffff; font-family: 'Lato', sans-serif; font-size: 54px; font-weight: 300; line-height: 58px; margin: 10px; padding: 10px; }
+
+p { font-family: 'Helvetica Neue', sans-serif;  color: #777777; margin: 2px 15px 2px 15px; font-weight: 260; }
+
+.navbar-inverse .navbar-text {
+  color: #ffffff;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #404040
+  font-weight: 310; 
+
+font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+blockquote { font-family: 'Bitter',serif; font-size: 24px; border-left: 5px solid #d0d0d0;  margin: 0 0 1 0px; color: #a9a9a9; padding: -15px -15px -15px -15px; text-align: center;
+border-right: 5px solid #d0d0d0; text-transform: uppercase;
+-moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+ul{
+ list-style:square;  display: inline-block;   margin: 10px; color: #777777;
+ 
+}
+
+.level1 { margin-top: 10px; margin-bottom: 12px}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+   
+    text-align: right;
+}
+
+.dygraph-title {
+  color: navy;
+  font-weight: bold;
+}
+.dygraph-axis-label {
+  font-size: 11px;
+}
+
+```	
+<div class="footer">
+  <p> mhughes@npr.org |  Updated  <script> document.write(new Date().toLocaleDateString()); </script> </p>
+</div>
+
+
+<style type="text/css">
+h4.date {
+  text-align: right;
+}
+.sidebar { overflow: auto; }
+</style>
+
+
+
+
+
+ 
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+
+library(readr)
+library(tidyverse)
+library(stargazer)
+library(highcharter)
+library(DT)
+RAW_PATH<-"../DATA/RAW/"
+data<-read_csv(paste0(RAW_PATH,"VCAP_STATE_TOTALS_MASTER.csv"))
+
+```
+
+
+```{r}
+export <- list(
+  list(text="PNG image",
+       onclick=JS("function () { 
+                  this.exportChart({ type: 'image/png' }); }")),
+  list(text="JPEG image",
+       onclick=JS("function () { 
+                  this.exportChart({ type: 'image/jpeg' }); }")),
+  list(text="SVG vector image",
+       onclick=JS("function () { 
+                  this.exportChart({ type: 'image/svg+xml' }); }")),
+  list(text="PDF document",
+       onclick=JS("function () { 
+                  this.exportChart({ type: 'application/pdf' }); }")),
+  list(separator=TRUE),
+  list(text="CSV document",
+       onclick=JS("function () { this.downloadCSV(); }")),
+  list(text="XLS document",
+       onclick=JS("function () { this.downloadXLS(); }"))
+  
+)
+
+
+```
+
+
+
+```{r}
+#head(data,10)
+#tail(data,10)
+# remove NA counties and division by zero
+data<-data %>% filter(!is.na(County)) %>%
+  mutate(Avg_Paid=replace(Avg_Paid, Avg_Paid=='#DIV/0!', 0)) %>% 
+  as.data.frame() 
+
+# remove characters from $$ columns and convert to numeric
+data$Avg_Paid<-gsub('$','',data$Avg_Paid,fixed=TRUE)
+data$Avg_Paid<-gsub(',','',data$Avg_Paid)
+data$Avg_Paid<-as.numeric(as.character(data$Avg_Paid)) # as.character first to be safe.
+
+data$Total_Paid<-gsub('$','',data$Total_Paid,fixed=TRUE)
+data$Total_Paid<-gsub(',','',data$Total_Paid)
+data$Total_Paid<-as.numeric(as.character(data$Total_Paid)) # as.character first to be safe.
+
+data.clean<-data%>% filter(!is.na(County)) %>%mutate(County=replace(County,County=="Out of state","Out Of State"))%>%
+  mutate(County=replace(County,County=="No county","No County"))%>%
+filter(!County %in% c("TOTAL"
+                      ,"Does not include claims being processed"
+                     , "OTHER"
+                   , "No County"
+                    ,"Out Of State"
+                     ) ) %>% data.frame()
+```
+
+
+
+```{r,plots}
+
+
+data.county<-data.clean %>% group_by(State,County) %>% filter(Year>=2013)%>%summarize(county_state=paste0(unique(County),", ",unique(State))
+  ,avg_processed=round(mean(Processed,na.rm=TRUE),2)
+                                        , avg_num_paid=round(mean(Num_Paid,na.rm=TRUE),2)
+                                        , total_processed=sum(Processed,na.rm=TRUE)
+                                        ,total_num_paid=sum(Num_Paid,na.rm=TRUE)
+                                       ,percent_unpaid=round(100*(sum(Processed,na.rm=TRUE)-sum(Num_Paid,na.rm=TRUE))/sum(Processed,na.rm=TRUE))
+                                        ) 
+
+data.county<-data.county %>% data.frame()%>% arrange(desc(percent_unpaid)) %>% mutate(county_state=factor(county_state,levels=county_state))
+#%>% filter(between(row_number(), 1, 15))
+
+
+
+
+x <- c( "State","Num. Claims Processed","Num. Claims Paid","Percent Claims Unpaid")
+
+y <- sprintf("{point.%s}", c( "State","total_processed","total_num_paid","percent_unpaid"))
+tltip <- tooltip_table(x, y)
+
+plot1<-highchart()%>%
+  hc_add_series(data.county[1:25,], "column", hcaes(x = as.character(county_state), 
+                                        y =percent_unpaid ,color=State   )) %>%
+  hc_yAxis( title = list(text = "100*(Total Unpaid)/(Total Processed)")) %>% 
+  hc_xAxis(title = list(text = " "),type="category" )%>% 
+  hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip)%>%
+  hc_plotOptions(column = list(itemStyle=list( fillOpacity = 0.1)))%>% 
+  hc_title(text="Percent of Processed Claims that went Unpaid")   %>%
+  hc_legend(enabled = FALSE, itemStyle=list(  opacity = 0.75,fontWeight="regular")) %>%
+hc_exporting(
+    enabled = TRUE, filename="top25counties_percentClaimsUnpaid"
+     , formAttributes=list(target="_blank"),
+               buttons=list(contextButton=list(
+               text="Export", theme=list(fill="transparent"),
+                 menuItems=export)) )
+  #%>% hc_add_theme(hc_theme_elementary())
+
+
+#######################################################
+############### PLOT 2
+
+top_five_per_state<-data.county%>%filter(percent_unpaid!="-Inf") %>% group_by(State) %>%
+  top_n(n = 5, wt = percent_unpaid) %>% arrange(State,desc(percent_unpaid))
+#mutate(County=as.character(County))
+
+
+
+x <- c( "State","Num. Claims Processed","Num. Claims Paid","Percent Claims Unpaid")
+
+y <- sprintf("{point.%s}", c( "State","total_processed","total_num_paid","percent_unpaid"))
+tltip <- tooltip_table(x, y)
+
+plot2<-highchart()%>%
+  hc_add_series(top_five_per_state, "bar", hcaes(x = county_state, 
+                                        y =percent_unpaid,group=State    )) %>%
+  hc_yAxis( title = list(text = "100*(Total Unpaid)/(Total Processed)"),max=100) %>% 
+ hc_xAxis(title = list(text = " "),type="category" )%>% 
+  hc_tooltip(useHTML = TRUE, headerFormat = "", pointFormat = tltip)%>%
+  hc_title(text="Top Five Counties per State: Percent of Unpaid Claims")   %>%
+  hc_legend(enabled = FALSE, itemStyle=list(  opacity = 0.75,fontWeight="regular"))%>%
+hc_exporting(
+    enabled = TRUE, filename="statesTop5counties_percentClaimsUnpaid"
+     , formAttributes=list(target="_blank"),
+               buttons=list(contextButton=list(
+               text="Export", theme=list(fill="transparent"),
+                 menuItems=export)) )
+# %>% hc_add_theme(hc_theme_elementary())
+
+```
+
+Exploration
+=======================================================================
+
+Column  {.tabset}
+-------------------------------------
+
+
+### Processed VS Paid
+
+Which counties experience the largest differences between claims processed and claims paid? 
+
+
+```{r,echo=FALSE}
+plot1
+```
+
+
+### States' Top Five Unpaid
+Which counties have the highest percentage of unpaid claims in each state?
+
+
+```{r,echo=FALSE}
+plot2
+```
+
+### Percent Denials
+
+```{r}
+library(DT)
+
+RAW_PATH<-"~/Documents/2018/02_Jaafari_Proj/DATA/RAW/"
+data<-read_csv(paste0(RAW_PATH,"VCAP_STATE_TOTALS_MASTER.csv"))
+
+data<-data %>% filter(!is.na(County)) %>%
+  mutate(Avg_Paid=replace(Avg_Paid, Avg_Paid=='#DIV/0!', 0)) %>% 
+  as.data.frame() 
+
+# remove characters from $$ columns and convert to numeric
+data$Avg_Paid<-gsub('$','',data$Avg_Paid,fixed=TRUE)
+data$Avg_Paid<-gsub(',','',data$Avg_Paid)
+data$Avg_Paid<-as.numeric(as.character(data$Avg_Paid)) # as.character first to be safe.
+
+data$Total_Paid<-gsub('$','',data$Total_Paid,fixed=TRUE)
+data$Total_Paid<-gsub(',','',data$Total_Paid)
+data$Total_Paid<-as.numeric(as.character(data$Total_Paid)) # as.character first to be safe.
+
+data.clean<-data%>% filter(!is.na(County)) %>%mutate(County=replace(County,County=="Out of state","Out Of State"))%>%
+  mutate(County=replace(County,County=="No county","No County"))%>%
+  filter(!County %in% c("TOTAL"
+                        ,"Does not include claims being processed"
+                        , "OTHER"
+                        , "No County"
+                        ,"Out Of State"
+  ) ) %>% data.frame()
+
+
+
+
+  
+  
+data.county<-data.clean %>% group_by(State,County) %>%summarize(county_state=paste0(unique(County),", ",unique(State))
+                                                                                      ,avg_processed_per_year=round(mean(Processed,na.rm=TRUE),2)
+                                                                , total_processed_all_years=sum(Processed,na.rm=TRUE)
+                                                                ,percent_denied=round(100*sum(Denied,na.rm=TRUE)/(sum(Processed,na.rm=TRUE)))
+                                                                ,total_denied=sum(Denied,na.rm=TRUE)
+                                                                                      , avg_num_paid=round(mean(Num_Paid,na.rm=TRUE),2)
+                                                                                      
+                                                                                      ,total_num_paid=sum(Num_Paid,na.rm=TRUE)
+                                                                
+                                                                                      ,percent_unpaid=round(100*(sum(Processed,na.rm=TRUE)-sum(Num_Paid,na.rm=TRUE))/sum(Processed,na.rm=TRUE))
+) %>% filter(avg_processed_per_year>20)
+
+data.county<-data.county %>% data.frame()%>% arrange(desc(percent_denied)) %>% mutate(county_state=factor(county_state,levels=county_state))
+#%>% filter(between(row_number(), 1, 15))
+
+
+datatable(data.county,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                , 
+                                                                                                buttons = 
+                                                                                                  list( list(
+                                                                                                    extend = 'collection',
+                                                                                                    buttons = list(list(extend='csv',
+                                                                                                                        filename = 'county_level_summary'),
+                                                                                                                   list(extend='excel',
+                                                                                                                        filename = paste0('unrestricted_CrossPromo_') ) ),text="Download"
+                                                                                                    
+                                                                                                    
+                                                                                                  ))))
+
+
+
+
+
+
+```
+
+
+
+### Top 3 Denials
+
+
+```{r}
+top_three_per_state<-data.county %>% group_by(State) %>% filter(percent_denied>0)%>%
+  top_n(n = 3, wt = percent_denied) %>% arrange(State,desc(percent_denied))
+
+
+datatable(top_three_per_state,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                , 
+                                                                                                buttons = 
+                                                                                                  list( list(
+                                                                                                    extend = 'collection',
+                                                                                                    buttons = list(list(extend='csv',
+                                                                                                                        filename = 'top3counties_percentDenied'),
+                                                                                                                   list(extend='excel',
+                                                                                                                        filename = paste0('top3counties_percentDenied') ) ),text="Download"
+                                                                                                    
+                                                                                                    
+                                                                                                  ))))
+
+
+
+
+```
+
+
+
+### New York: Denied HIC
+
+```{r}
+ny_denied<-data.clean %>% filter(State=="New York") %>% group_by(County) %>% mutate(Denied=as.integer(as.character(Denied))) %>%mutate(Denied_HIC=as.integer(as.character(Denied_HIC))) %>%
+  summarize(Total_Denied=sum(Denied,na.rm=TRUE)
+                  ,   Total_Denied_HIC=sum(Denied_HIC,na.rm=TRUE)
+                ,Avg_Denied=round(mean(Denied,na.rm=TRUE))
+                ,Avg_Denied_HIC=round(mean(Denied_HIC,na.rm=TRUE))
+                     ,percent_denied_HIC=round(100*sum(Denied_HIC,na.rm=TRUE)/sum(Denied,na.rm=TRUE))
+                                                                                        )
+  
+
+
+datatable(ny_denied,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                , 
+                                                                                                buttons = 
+                                                                                                  list( list(
+                                                                                                    extend = 'collection',
+                                                                                                    buttons = list(list(extend='csv',
+                                                                                                                        filename = 'NY_counties_denied_HIC'),
+                                                                                                                   list(extend='excel',
+                                                                                                                        filename = paste0('NY_counties_denied_HIC') ) ),text="Download"
+                                                                                                    
+                                                                                                    
+                                                                                                  ))))
+
+
+
+
+
+# filter(Total_Denied>20)%>%
+#  top_n(n = 3, wt = percent_denied) %>% arrange(State,desc(percent_denied))
+
+
+
+
+```
+
+
+### State-Level
+```{r}
+
+state_totals<- read_csv("/Users/MHughes/Documents/2018/02_Jaafari_Proj/DATA/RAW/STATE_TOTALS_2010-2015.csv")
+#For New York (2011-2015):
+#  Out of total murder claims, what percentage were denied b/c of a hand in their own crime?
+
+state_sum<-state_totals%>% group_by(State) %>% summarize(Percent_of_Denials_bc_HIC=round(100*sum(`Denied b/c HIC`,na.rm=TRUE)/sum(`Claims Denied`,na.rm=TRUE),2)
+                                              ,Percent_Murder_Claims_Denied_bc_HIC=round(100*sum(`Denied b/c HIC`,na.rm=TRUE)/sum(`Murder Claims`,na.rm=TRUE))
+                                              )
+
+
+
+
+datatable(state_sum,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                , 
+                                                                                                buttons = 
+                                                                                                  list( list(
+                                                                                                    extend = 'collection',
+                                                                                                    buttons = list(list(extend='csv',
+                                                                                                                        filename = 'state_level_summary'),
+                                                                                                                   list(extend='excel',
+                                                                                                                        filename = paste0('state_level_summary') ) ),text="Download"
+                                                                                                    
+                                                                                                    
+                                                                                                  ))))
+
+```
+
+### Denials by % Minority
+
+```{r}
+
+percent_minority<-read_csv("/Users/MHughes/Documents/2018/02_Jaafari_Proj/DATA/RAW/CensusRacialData2013.csv")
+
+percent_minority<- percent_minority%>%  mutate(percent_nonwhite=round(100-White,2))
+
+percent_minority$minority_binned<-NA
+percent_minority$minority_binned=ifelse(percent_minority$percent_nonwhite<=25,25,percent_minority$minority_binned)
+percent_minority$minority_binned=ifelse(percent_minority$percent_nonwhite>25 & percent_minority$percent_nonwhite<=50 ,50,percent_minority$minority_binned)
+percent_minority$minority_binned=ifelse(percent_minority$percent_nonwhite>50 & percent_minority$percent_nonwhite<=75 ,75,percent_minority$minority_binned)
+percent_minority$minority_binned=ifelse(percent_minority$percent_nonwhite>75 & percent_minority$percent_nonwhite<=100 ,100,percent_minority$minority_binned)
+
+
+counties_with_race<-merge(data.county,percent_minority,by.x=c("County","State"),by.y=c("County","State"))
+counties_with_race<-counties_with_race%>%filter(avg_processed_per_year>20& !State %in% c("New Jersey","Pennsylvania"))
+state_denials_summary<-counties_with_race %>%group_by(State,minority_binned)%>%
+ summarize(Average_Percent_Denied=round(mean(percent_denied)))
+  
+  
+
+datatable(state_denials_summary,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                            dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                            , 
+                                                                                                            buttons = 
+                                                                                                              list( list(
+                                                                                                                extend = 'collection',
+                                                                                                                buttons = list(list(extend='csv',
+                                                                                                                                    filename = 'avgPercentDenied_by_PercentMinority'),
+                                                                                                                               list(extend='excel',
+                                                                                                                                    filename = paste0('avgPercentDenied_by_PercentMinority') ) ),text="Download"
+                                                                                                                
+                                                                                                                
+                                                                                                              ))))
+
+
+
+```
+
+### High/Low Minority Counties
+
+```{r}
+
+
+top_three_minority_counties <- counties_with_race%>% group_by(State) %>% top_n(n = 3, wt = percent_nonwhite) %>% arrange(State,percent_nonwhite) %>% select(State,County, minority_binned,Black,Latino,`Native American`,percent_nonwhite, percent_denied)
+
+lowest_three_minority_counties<- counties_with_race%>% group_by(State) %>% top_n(n = -3, wt = percent_nonwhite) %>% arrange(State,percent_nonwhite) %>% select(State,County, minority_binned,Black,Latino,`Native American`, percent_nonwhite, percent_denied)
+
+high_low_minority<-rbind(top_three_minority_counties,lowest_three_minority_counties)
+high_low_minority<-high_low_minority%>%arrange(State,percent_nonwhite) 
+
+datatable(high_low_minority,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                           dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                           , 
+                                                                                                           buttons = 
+                                                                                                             list( list(
+                                                                                                               extend = 'collection',
+                                                                                                               buttons = list(list(extend='csv',
+                                                                                                                                   filename = 'avgPercentDenied_by_PercentMinority'),
+                                                                                                                              list(extend='excel',
+                                                                                                                                   filename = paste0('avgPercentDenied_by_PercentMinority') ) ),text="Download"
+                                                                                                               
+                                                                                                               
+                                                                                                             ))))%>%
+  
+  formatStyle(c("State","County", "minority_binned","Black","Latino","percent_nonwhite", "percent_denied"),fontSize='85%')
+
+
+
+
+```
+
+### County Data Cleaned
+
+```{r}
+#counties_with_race2<- counties_with_race %>%filter(avg_processed_per_year>20 )
+datatable(counties_with_race,  rownames = FALSE, extensions = c('Buttons','FixedColumns'),  options = list(pageLength = 100, fixedColumns = list(leftColumns = 1),
+                                                                                                           dom = 'Bfrtip',columnDefs = list(list(searchable = FALSE, targets = 1))
+                                                                                                           , 
+                                                                                                           buttons = 
+                                                                                                             list( list(
+                                                                                                               extend = 'collection',
+                                                                                                               buttons = list(list(extend='csv',
+                                                                                                                                   filename = 'counties_with_race_data'),
+                                                                                                                              list(extend='excel',
+                                                                                                                                   filename = paste0('counties_with_race_data') ) ),text="Download"
+                                                                                                               
+                                                                                                               
+                                                                                                             ))))%>%
+  
+  formatStyle(c("State","County", "minority_binned","Black","Latino","percent_nonwhite", "percent_denied"),fontSize='85%')
+
+
+
+```
+
+### Model Summary
+
+####
+**Interpretation:** after controlling for the state and total claims processed, *a 10% increase in a county's non-white population corresponded to a 3.9% increase in denials.*
+```{r}
+mod2<-lm(log(total_denied)~percent_nonwhite +factor(State) +  log(total_processed_all_years),data=counties_with_race)
+summary(mod2)#, robust=TRUE)
+
+```
+####
+
+```{r}
+
+counties_with_race$predicted_log<-mod2$fitted.values
+counties_with_race$est_percent_increased_denials<-100*counties_with_race$percent_nonwhite*(exp(0.003899)-1)
+
+plot(counties_with_race$percent_nonwhite , counties_with_race$percent_denied)
+lines(counties_with_race$percent_nonwhite, counties_with_race$est_percent_increased_denials,col="red")
+
+#plot(counties_with_race$percent_nonwhite , counties_with_race$total_denied)
+#lines(counties_with_race$percent_nonwhite, counties_with_race$est_percent_increased_denials,col="red")
+
+
+#abline(lm(log(counties_with_race$total_denied)~counties_with_race$percent_nonwhite), col="red")
+```
+
+
+
